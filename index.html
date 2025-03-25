@@ -1,696 +1,449 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Thomson Napitupulu | Software Engineer</title>
-<style>
-:root {
-    --background: #ffffff;
-    --text: #232323;
-    --accent: #0070f3;
-    --light-gray: #f5f5f5;
-    --border: #eaeaea;
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thomson Napitupulu | Software Engineer</title>
+    <style>
+        :root {
+            --background: #ffffff;
+            --text: #232323;
+            --accent: #0070f3;
+            --light-gray: #f5f5f5;
+            --border: #eaeaea;
+        }
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    line-height: 1.6;
-    color: var(--text);
-    background-color: var(--background);
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 2rem;
-}
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--background);
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
 
-a {
-    color: var(--accent);
-    text-decoration: none;
-    transition: opacity 0.2s ease;
-}
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: opacity 0.2s ease;
+        }
 
-a:hover {
-    opacity: 0.8;
-}
+        a:hover {
+            opacity: 0.8;
+        }
 
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-    padding: 1rem 0;
-}
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 3rem;
+        }
 
-.header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+        .logo {
+            font-weight: 700;
+            font-size: 1.25rem;
+        }
 
-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 2rem;
-    margin: 0;
-    padding: 0;
-}
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
 
-nav a {
-    color: var(--text);
-    font-weight: 500;
-    position: relative;
-}
+        nav a {
+            color: var(--text);
+            font-weight: 500;
+        }
 
-nav a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -5px;
-    left: 0;
-    background-color: var(--accent);
-    transition: width 0.3s ease;
-}
+        nav a.active {
+            color: var(--accent);
+        }
 
-nav a:hover::after,
-nav a.active::after {
-    width: 100%;
-}
+        section {
+            margin-bottom: 3rem;
+        }
 
-nav a.active {
-    color: var(--accent);
-}
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
 
-section {
-    margin-bottom: 5rem;
-}
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
 
-h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-}
+        h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+        }
 
-h2 {
-    font-size: 2rem;
-    font-weight: 700;
-    margin-bottom: 2rem;
-}
+        p {
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
 
-h3 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-}
+        .highlight {
+            color: var(--accent);
+        }
 
-p {
-    margin-bottom: 1.5rem;
-    font-size: 1.1rem;
-}
+        .intro {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
 
-.highlight {
-    color: var(--accent);
-}
+        .profile-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent);
+        }
 
-.hero {
-    display: flex;
-    align-items: center;
-    gap: 3rem;
-    margin-bottom: 2rem;
-}
+        .intro-content {
+            flex: 1;
+        }
 
-.profile-image {
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 5px solid var(--accent);
-}
+        .skills-container {
+            margin-bottom: 1.5rem;
+        }
 
-.hero-content {
-    flex: 1;
-}
+        .skills-tags {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
 
-.hero-content h1 {
-    margin-bottom: 1rem;
-}
+        .tag {
+            background-color: rgba(0, 112, 243, 0.1);
+            color: var(--accent);
+            padding: 0.25rem 0.75rem;
+            border-radius: 100px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
 
-.hero-content p {
-    font-size: 1.25rem;
-    max-width: 600px;
-}
+        .timeline {
+            position: relative;
+            margin-left: 20px;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--accent);
+            top: 0;
+            bottom: 0;
+            left: 0;
+            margin-left: -2px;
+            border-radius: 2px;
+        }
+        
+        .experience-item {
+            padding: 12px 30px;
+            position: relative;
+            margin-bottom: 20px;
+            margin-left: 20px;
+        }
+        
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            left: -28px;
+            background-color: white;
+            border: 3px solid var(--accent);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        .experience-company {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        .experience-title {
+            color: var(--accent);
+            font-weight: 500;
+            font-size: 1rem;
+        }
+        
+        .experience-date {
+            color: #666;
+            font-size: 0.85rem;
+        }
 
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 2rem;
-}
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
 
-.project-card {
-    background-color: var(--light-gray);
-    border-radius: 8px;
-    overflow: hidden;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
+        .project-card {
+            background-color: var(--light-gray);
+            border-radius: 8px;
+            overflow: hidden;
+            padding: 1.5rem;
+        }
 
-.project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
+        .education-item {
+            margin-bottom: 1.5rem;
+        }
 
-.project-image {
-    width: 100%;
-    height: 180px;
-    background-color: #ddd;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #999;
-}
+        .education-degree {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
 
-.project-content {
-    padding: 1.5rem;
-}
+        .education-school {
+            margin-bottom: 0.25rem;
+        }
 
-.project-tags {
-    display: flex;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
-    flex-wrap: wrap;
-}
+        .education-date {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
 
-.tag {
-    background-color: rgba(0, 112, 243, 0.1);
-    color: var(--accent);
-    padding: 0.25rem 0.75rem;
-    border-radius: 100px;
-    font-size: 0.85rem;
-    font-weight: 500;
-}
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
 
-.timeline {
-    position: relative;
-    max-width: 800px;
-    margin: 0 auto;
-}
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
 
-.timeline::after {
-    content: '';
-    position: absolute;
-    width: 6px;
-    background-color: var(--accent);
-    top: 0;
-    bottom: 0;
-    left: 0;
-    margin-left: -3px;
-    border-radius: 3px;
-}
+        .social-link {
+            color: var(--text);
+            font-size: 1rem;
+            font-weight: 500;
+        }
 
-.experience-item {
-    padding: 15px 40px;
-    position: relative;
-    margin-bottom: 30px;
-    margin-left: 20px;
-    background-color: var(--light-gray);
-    border-radius: 8px;
-}
+        footer {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: #666;
+            font-size: 0.9rem;
+        }
 
-.experience-item::before {
-    content: '';
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    left: -30px;
-    background-color: white;
-    border: 4px solid var(--accent);
-    top: 15px;
-    border-radius: 50%;
-    z-index: 1;
-}
-
-.experience-company {
-    font-weight: 600;
-    font-size: 1.2rem;
-    margin-bottom: 4px;
-}
-
-.experience-title {
-    color: var(--accent);
-    font-weight: 500;
-    font-size: 1.1rem;
-    margin-bottom: 4px;
-}
-
-.experience-date {
-    color: #666;
-    font-size: 0.9rem;
-}
-
-.blog-list {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-.blog-card {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    padding-bottom: 2rem;
-    border-bottom: 1px solid var(--border);
-}
-
-.blog-card:last-child {
-    border-bottom: none;
-}
-
-.blog-meta {
-    display: flex;
-    gap: 1rem;
-    font-size: 0.9rem;
-    color: #666;
-}
-
-.search-container {
-    margin-bottom: 2rem;
-}
-
-.search-input {
-    width: 100%;
-    padding: 0.75rem 1rem;
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    font-size: 1rem;
-    transition: border-color 0.2s ease;
-}
-
-.search-input:focus {
-    outline: none;
-    border-color: var(--accent);
-}
-
-.education-item {
-    margin-bottom: 2rem;
-}
-
-.education-degree {
-    font-weight: 600;
-    margin-bottom: 0.25rem;
-}
-
-.education-school {
-    margin-bottom: 0.25rem;
-}
-
-.education-date {
-    color: #666;
-    font-size: 0.9rem;
-    margin-bottom: 0.5rem;
-}
-
-.certifications-list {
-    list-style-type: disc;
-    padding-left: 1.5rem;
-    margin-bottom: 1.5rem;
-}
-
-.certifications-list li {
-    margin-bottom: 0.5rem;
-}
-
-footer {
-    margin-top: 5rem;
-    padding-top: 2rem;
-    border-top: 1px solid var(--border);
-    text-align: center;
-    color: #666;
-}
-
-.social-links {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    margin-bottom: 1.5rem;
-}
-
-.social-link {
-    color: var(--text);
-    font-size: 1.25rem;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem;
-    }
-
-    nav ul {
-        gap: 1rem;
-    }
-
-    h1 {
-        font-size: 2rem;
-    }
-
-    h2 {
-        font-size: 1.75rem;
-    }
-    
-    .timeline::after {
-        left: 31px;
-    }
-    
-    .experience-item {
-        width: 100%;
-        padding-left: 70px;
-        padding-right: 25px;
-    }
-    
-    .experience-item::before {
-        left: 20px;
-        margin-right: 0;
-    }
-}
-@media (max-width: 768px) {
-    .header-content {
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-    }
-}
-</style>
+        @media (max-width: 768px) {
+            .intro {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            header {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .experience-item {
+                width: 100%;
+                padding-left: 60px;
+                padding-right: 20px;
+            }
+            
+            .experience-item::before {
+                left: 20px;
+            }
+        }
+    </style>
 </head>
 <body>
-<header>
-<div class="container">
-    <div class="header-content">
+    <header>
         <div class="logo">Thomson Napitupulu</div>
         <nav>
             <ul>
                 <li><a href="#about" class="active">About</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#projects">Projects</a></li>
-                <li><a href="#blog">Blog</a></li>
                 <li><a href="#education">Education</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
-    </div>
-</div>
-</header>
+    </header>
 
-<main>
-<section id="about" class="about-section">
-    <div class="container">
-        <div class="hero">
-            <img src="/assets/img/thomson-pp.jpeg" alt="Thomson Napitupulu" class="profile-image">
-            <div class="hero-content">
-                <h1>Hi, I'm <span class="highlight">Thomson Napitupulu</span></h1>
-                <p>A highly motivated and results-oriented software engineer with 10+ years of experience, specializing in building scalable backend systems and cloud-native applications.</p>
-            </div>
-        </div>
-        
-        <div class="about-content">
-            <h2>About Me</h2>
-            <p>I'm a software engineer with extensive experience in developing scalable backend systems and cloud-native applications. With a proven track record in leading projects and collaborating effectively with cross-functional teams, I bring expertise in Golang, PostgreSQL, and GCP, complemented by a strong understanding of cloud platforms, Kubernetes, and CI/CD.</p>
-            <p>Passionate about driving innovation in fast-paced environments, I continuously seek opportunities to enhance system performance and streamline development processes.</p>
-            <p>My technical toolkit includes:</p>
-            <div class="project-tags">
-                <span class="tag">Golang</span>
-                <span class="tag">PHP</span>
-                <span class="tag">Python</span>
-                <span class="tag">JavaScript</span>
-                <span class="tag">PostgreSQL</span>
-                <span class="tag">MySQL</span>
-                <span class="tag">MongoDB</span>
-                <span class="tag">Neo4J</span>
-                <span class="tag">GCP</span>
-                <span class="tag">AWS</span>
-                <span class="tag">Laravel</span>
-                <span class="tag">React</span>
-                <span class="tag">Docker</span>
-                <span class="tag">Kubernetes</span>
-                <span class="tag">Git</span>
-                <span class="tag">CI/CD</span>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="experience" class="experience-section">
-    <div class="container">
-        <h2>Experience</h2>
-        
-        <div class="timeline">
-            <div class="experience-item">
-                <div class="experience-company">Brankas Teknologi Indonesia (Brankas.com)</div>
-                <div class="experience-title">System Developer</div>
-                <div class="experience-date">September 2022 – November 2024</div>
-            </div>
-            
-            <div class="experience-item">
-                <div class="experience-company">Peruri Digital Security</div>
-                <div class="experience-title">Assistant Vice President in Enterprise Solution</div>
-                <div class="experience-date">June 2021 – August 2022</div>
-            </div>
-            
-            <div class="experience-item">
-                <div class="experience-company">Rupi Digital Indonesia (Rupi.id)</div>
-                <div class="experience-title">Principal Software Engineer</div>
-                <div class="experience-date">November 2020 – May 2021</div>
-            </div>
-            
-            <div class="experience-item">
-                <div class="experience-company">Shippindo Teknologi Logistik (Shipper.id)</div>
-                <div class="experience-title">Technical Lead</div>
-                <div class="experience-date">January 2018 – April 2020</div>
-            </div>
-            
-            <div class="experience-item">
-                <div class="experience-company">Shippindo Teknologi Logistik (Shipper.id)</div>
-                <div class="experience-title">Project Manager</div>
-                <div class="experience-date">August 2017 – December 2017</div>
-            </div>
-            
-            <div class="experience-item">
-                <div class="experience-company">Shippindo Teknologi Logistik (Shipper.id)</div>
-                <div class="experience-title">Software Engineer</div>
-                <div class="experience-date">June 2016 – July 2017</div>
-            </div>
-            
-            <div class="experience-item">
-                <div class="experience-company">Moonlay Technologies</div>
-                <div class="experience-title">Software Engineer</div>
-                <div class="experience-date">November 2014 – November 2016</div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="projects" class="projects-section">
-    <div class="container">
-        <h2>Projects</h2>
-        <div class="projects-grid">
-            <!-- Project 1 -->
-            <div class="project-card">
-                <div class="project-image">Banking Integration System</div>
-                <div class="project-content">
-                    <h3>Banking API Integration</h3>
-                    <div class="project-tags">
-                        <span class="tag">Golang</span>
-                        <span class="tag">PostgreSQL</span>
-                        <span class="tag">Kubernetes</span>
-                        <span class="tag">GCP</span>
-                    </div>
-                    <p>Developed a robust integration system connecting multiple banking APIs across the Philippines and Indonesia, reducing transaction processing time from 3 minutes to under 1 minute.</p>
+    <main>
+        <section id="about">
+            <div class="intro">
+                <img src="/assets/img/thomson-pp.jpeg" alt="Thomson Napitupulu" class="profile-image">
+                <div class="intro-content">
+                    <h1>Thomson Napitupulu</h1>
+                    <p>Software engineer with 10+ years of experience specializing in scalable backend systems and cloud-native applications. Proven track record in leading projects and building high-performance solutions.</p>
                 </div>
             </div>
+            
+            <div class="skills-container">
+                <h3>Technical Skills</h3>
+                <div class="skills-tags">
+                    <span class="tag">Golang</span>
+                    <span class="tag">PostgreSQL</span>
+                    <span class="tag">GCP</span>
+                    <span class="tag">AWS</span>
+                    <span class="tag">Docker</span>
+                    <span class="tag">Kubernetes</span>
+                    <span class="tag">Microservices</span>
+                    <span class="tag">CI/CD</span>
+                    <span class="tag">PHP</span>
+                    <span class="tag">Python</span>
+                    <span class="tag">Laravel</span>
+                </div>
+            </div>
+        </section>
 
-            <!-- Project 2 -->
-            <div class="project-card">
-                <div class="project-image">Digital Meterai Platform</div>
-                <div class="project-content">
-                    <h3>Electronic Meterai Distribution</h3>
-                    <div class="project-tags">
+        <section id="experience">
+            <h2>Experience</h2>
+            
+            <div class="timeline">
+                <div class="experience-item">
+                    <div class="experience-company">Brankas Teknologi Indonesia</div>
+                    <div class="experience-title">System Developer</div>
+                    <div class="experience-date">Sep 2022 – Nov 2024</div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="experience-company">Peruri Digital Security</div>
+                    <div class="experience-title">Assistant VP in Enterprise Solution</div>
+                    <div class="experience-date">Jun 2021 – Aug 2022</div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="experience-company">Rupi Digital Indonesia</div>
+                    <div class="experience-title">Principal Software Engineer</div>
+                    <div class="experience-date">Nov 2020 – May 2021</div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="experience-company">Shippindo Teknologi Logistik</div>
+                    <div class="experience-title">Technical Lead</div>
+                    <div class="experience-date">Jan 2018 – Apr 2020</div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="experience-company">Moonlay Technologies</div>
+                    <div class="experience-title">Software Engineer</div>
+                    <div class="experience-date">Nov 2014 – Nov 2016</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Key Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>Banking API Integration Platform</h3>
+                    <div class="skills-tags">
                         <span class="tag">Golang</span>
-                        <span class="tag">Laravel</span>
+                        <span class="tag">GCP</span>
+                        <span class="tag">Kubernetes</span>
+                    </div>
+                    <p>Reduced transaction processing time from 3 minutes to under 1 minute across multiple banking APIs in the Philippines and Indonesia.</p>
+                </div>
+
+                <div class="project-card">
+                    <h3>Electronic Meterai Distribution</h3>
+                    <div class="skills-tags">
+                        <span class="tag">Golang</span>
                         <span class="tag">Microservices</span>
                         <span class="tag">DDD</span>
                     </div>
-                    <p>Built a backbone system for Peruri's digital product and electronic meterai distribution using microservice architecture and Domain-Driven Design, optimizing performance with asynchronous processing.</p>
+                    <p>Built backbone system using microservice architecture and Domain-Driven Design, achieving sub-500ms latency.</p>
                 </div>
             </div>
+        </section>
 
-            <!-- Project 3 -->
-            <div class="project-card">
-                <div class="project-image">Warehouse Management</div>
-                <div class="project-content">
-                    <h3>Pakde Warehouse System</h3>
-                    <div class="project-tags">
-                        <span class="tag">Golang</span>
-                        <span class="tag">AWS</span>
-                        <span class="tag">CI/CD</span>
-                    </div>
-                    <p>Developed and maintained the backend for a comprehensive warehouse management system, including inventory tracking, order processing, and shipping integration.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="blog" class="blog-section">
-    <div class="container">
-        <h2>Blog</h2>
-        <div class="search-container">
-            <input type="text" class="search-input" placeholder="Search articles..." id="search-blog">
-        </div>
-        <div class="blog-list" id="blog-list">
-            <!-- Blog Post 1 -->
-            <div class="blog-card">
-                <h3><a href="#" target="_blank">Microservice Architecture with Domain-Driven Design in Golang</a></h3>
-                <div class="blog-meta">
-                    <span>February 15, 2024</span>
-                    <span>Medium</span>
-                </div>
-                <p>An in-depth exploration of how to implement Domain-Driven Design principles in Golang microservices, based on my experience building enterprise solutions.</p>
-            </div>
-
-            <!-- Blog Post 2 -->
-            <div class="blog-card">
-                <h3><a href="#" target="_blank">Optimizing API Performance: From 3 Minutes to Under 1 Minute</a></h3>
-                <div class="blog-meta">
-                    <span>November 22, 2023</span>
-                    <span>LinkedIn</span>
-                </div>
-                <p>A technical deep-dive into the strategies and techniques used to optimize transaction processing time in banking integration systems.</p>
-            </div>
-
-            <!-- Blog Post 3 -->
-            <div class="blog-card">
-                <h3><a href="#" target="_blank">From Monolith to Microservices: A Real-world Migration Story</a></h3>
-                <div class="blog-meta">
-                    <span>August 10, 2023</span>
-                    <span>Medium</span>
-                </div>
-                <p>Lessons learned from migrating a monolithic architecture to a cloud-native microservices approach, including challenges faced and solutions implemented.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="education" class="education-section">
-    <div class="container">
-        <h2>Education</h2>
-        
-        <div class="education-item">
-            <div class="education-degree">Master of Information Technology</div>
-            <div class="education-school">Swiss German University, Tangerang, Indonesia</div>
-            <div class="education-date">2023 – Feb 2025</div>
-            <div>Concentration: Data Science Business Informatics</div>
-            <div>GPA: 3.65 / 4.0</div>
-        </div>
-        
-        <div class="education-item">
-            <div class="education-degree">Bachelor of Informatics Engineering</div>
-            <div class="education-school">Universitas Mercubuana, Jakarta, Indonesia</div>
-            <div class="education-date">2015 - 2017</div>
-            <div>GPA: 3.21 / 4.0</div>
-        </div>
-        
-        <div class="education-item">
-            <div class="education-degree">Diploma Level III of Informatics Engineering</div>
-            <div class="education-school">Institut Teknologi Del, Toba, Indonesia</div>
-            <div class="education-date">2011 - 2014</div>
-            <div>GPA: 3.16 / 4.0</div>
-            <div>Honors: Google Student Ambassador 2013</div>
-            <div>Awards: National Finalist in Programming Contest at Gemastik 2012</div>
-        </div>
-
-        <h3>Certifications</h3>
-        <ul class="certifications-list">
-            <li>Multi AI Agent Systems with crewAI by DeepLearning.AI</li>
-            <li>Certified Artificial Intelligence Engineer (CAIE) by USAII, issued in January 2025</li>
-            <li>Neo4j Fundamentals</li>
-            <li>Golang Jumpstart by Udemy</li>
-            <li>Crash Course Python by Google Training, issued in April 2021</li>
-        </ul>
-    </div>
-</section>
-
-<section id="contact" class="contact-section">
-    <div class="container">
-        <h2>Get In Touch</h2>
-        <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision. Feel free to reach out to me at <a href="mailto:thomson.p.napitupulu@gmail.com">thomson.p.napitupulu@gmail.com</a>.</p>
-        <div class="social-links">
-            <a href="https://github.com/thomsonn" target="_blank" class="social-link">GitHub</a>
-            <a href="https://linkedin.com/in/thomson-napitupulu" target="_blank" class="social-link">LinkedIn</a>
-            <a href="https://medium.com/@thomson" target="_blank" class="social-link">Medium</a>
-        </div>
-    </div>
-</section>
-</main>
-
-<footer>
-<p>© 2025 Thomson Napitupulu. All rights reserved.</p>
-</footer>
-
-<script>
-// Simple Search Functionality for Blog
-document.addEventListener('DOMContentLoaded', function() {
-    const searchInput = document.getElementById('search-blog');
-    const blogList = document.getElementById('blog-list');
-    const blogCards = blogList.querySelectorAll('.blog-card');
-
-    searchInput.addEventListener('input', function() {
-        const searchTerm = this.value.toLowerCase();
-        
-        blogCards.forEach(card => {
-            const title = card.querySelector('h3').textContent.toLowerCase();
-            const content = card.querySelector('p').textContent.toLowerCase();
+        <section id="education">
+            <h2>Education & Certifications</h2>
             
-            if (title.includes(searchTerm) || content.includes(searchTerm)) {
-                card.style.display = 'block';
-            } else {
-                card.style.display = 'none';
-            }
-        });
-    });
-});
+            <div class="education-item">
+                <div class="education-degree">Master of Information Technology</div>
+                <div class="education-school">Swiss German University | GPA: 3.65/4.0</div>
+                <div class="education-date">2023 – Feb 2025</div>
+            </div>
+            
+            <div class="education-item">
+                <div class="education-degree">Bachelor of Informatics Engineering</div>
+                <div class="education-school">Universitas Mercubuana | GPA: 3.21/4.0</div>
+                <div class="education-date">2015 - 2017</div>
+            </div>
+            
+            <h3>Certifications</h3>
+            <div class="skills-tags">
+                <span class="tag">Certified AI Engineer (CAIE)</span>
+                <span class="tag">Multi AI Agent Systems with crewAI</span>
+                <span class="tag">Neo4j Fundamentals</span>
+                <span class="tag">Golang Jumpstart</span>
+            </div>
+        </section>
 
-// Add active class to navigation based on scroll position
-window.addEventListener('scroll', function() {
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('nav a');
-    
-    let currentSection = '';
-    
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        
-        if (window.pageYOffset >= (sectionTop - 200)) {
-            currentSection = section.getAttribute('id');
-        }
-    });
-    
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href').substring(1) === currentSection) {
-            link.classList.add('active');
-        }
-    });
-});
-</script>
+        <section id="contact">
+            <h2>Contact</h2>
+            <div class="contact-info">
+                <p>Email: <a href="mailto:thomson.p.napitupulu@gmail.com">thomson.p.napitupulu@gmail.com</a></p>
+                <p>Location: Kota Tangerang, Indonesia</p>
+                <div class="social-links">
+                    <a href="https://github.com/thomsonn" target="_blank" class="social-link">GitHub</a>
+                    <a href="https://linkedin.com/in/thomson-napitupulu" target="_blank" class="social-link">LinkedIn</a>
+                    <a href="https://medium.com/@thomson" target="_blank" class="social-link">Medium</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Thomson Napitupulu</p>
+    </footer>
+
+    <script>
+        // Add active class to navigation based on scroll position
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('nav a');
+            
+            let currentSection = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (window.pageYOffset >= (sectionTop - 200)) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').substring(1) === currentSection) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
