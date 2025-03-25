@@ -25,37 +25,17 @@
             line-height: 1.6;
             color: var(--text);
             background-color: var(--background);
-            max-width: 1100px;
+            max-width: 850px;
             margin: 0 auto;
             padding: 0 1.5rem;
         }
         
-        .main-content {
+        section {
+            min-height: 100vh;
             display: flex;
-            gap: 3rem;
-        }
-        
-        .content-area {
-            flex: 1;
-        }
-        
-        .sidebar {
-            width: 280px;
-            padding-top: 2rem;
-        }
-        
-        .sidebar-section {
-            margin-bottom: 2.5rem;
-        }
-        
-        .sidebar-title {
-            font-family: var(--font-mono);
-            font-size: 0.9rem;
-            color: var(--accent);
-            margin-bottom: 1rem;
-            font-weight: 500;
-            padding-bottom: 0.5rem;
-            border-bottom: 1px solid var(--border);
+            flex-direction: column;
+            justify-content: center;
+            padding: 4rem 0;
         }
 
         a {
@@ -365,6 +345,11 @@
             .project-grid {
                 grid-template-columns: 1fr;
             }
+            
+            section {
+                min-height: auto;
+                padding: 3rem 0;
+            }
         }
     </style>
 </head>
@@ -382,144 +367,106 @@
     </header>
 
     <main>
-        <div class="main-content">
-            <div class="content-area">
-                <section id="about">
-                    <div class="intro">
-                        <img src="/api/placeholder/180/180" alt="Thomson Napitupulu" class="profile-image">
-                        <div class="intro-content">
-                            <div class="role">Software Engineer</div>
-                            <h1>Hi, I'm Thomson Napitupulu</h1>
-                            <p>A seasoned software engineer with 10+ years of experience specializing in scalable backend systems and cloud-native applications using Golang, PostgreSQL, and microservices architecture.</p>
-                            <div class="currently">
-                                Currently working as a System Developer at Brankas
-                            </div>
-                        </div>
-                    </div>
-                </section>
-        
-                <section id="blog">
-                    <div class="section-heading">Latest Articles</div>
-                    <div class="blog-list">
-                        <a href="#" class="blog-card">
-                            <div class="blog-date">February 15, 2024</div>
-                            <h3 class="blog-title">Microservice Architecture with Domain-Driven Design in Golang</h3>
-                            <p class="blog-excerpt">An in-depth exploration of how to implement Domain-Driven Design principles in Golang microservices, based on my experience building enterprise solutions.</p>
-                        </a>
-        
-                        <a href="#" class="blog-card">
-                            <div class="blog-date">November 22, 2023</div>
-                            <h3 class="blog-title">Optimizing API Performance: From 3 Minutes to Under 1 Minute</h3>
-                            <p class="blog-excerpt">A technical deep-dive into the strategies and techniques used to optimize transaction processing time in banking integration systems.</p>
-                        </a>
-        
-                        <a href="#" class="blog-card">
-                            <div class="blog-date">August 10, 2023</div>
-                            <h3 class="blog-title">From Monolith to Microservices: A Real-world Migration Story</h3>
-                            <p class="blog-excerpt">Lessons learned from migrating a monolithic architecture to a cloud-native microservices approach, including challenges faced and solutions implemented.</p>
-                        </a>
-                    </div>
-                    <div class="view-all-container">
-                        <a href="/blog" class="view-all-button">View All Articles</a>
-                    </div>
-                </section>
-        
-                <section id="projects">
-                    <div class="section-heading">Selected Projects</div>
-                    <div class="project-grid">
-                        <div class="project-card">
-                            <div class="project-image">Banking API Integration</div>
-                            <div class="project-content">
-                                <h3 class="project-title">Banking API Integration Platform</h3>
-                                <p class="project-description">Developed a robust integration system connecting multiple banking APIs across the Philippines and Indonesia, reducing transaction processing time from 3 minutes to under 1 minute.</p>
-                                <div class="tech-tags">
-                                    <span class="tag">Golang</span>
-                                    <span class="tag">PostgreSQL</span>
-                                    <span class="tag">Kubernetes</span>
-                                    <span class="tag">GCP</span>
-                                </div>
-                            </div>
-                        </div>
-        
-                        <div class="project-card">
-                            <div class="project-image">Electronic Meterai Distribution</div>
-                            <div class="project-content">
-                                <h3 class="project-title">Electronic Meterai Distribution</h3>
-                                <p class="project-description">Built a backbone system for Peruri's digital product and electronic meterai distribution using microservice architecture and Domain-Driven Design, optimizing performance with asynchronous processing.</p>
-                                <div class="tech-tags">
-                                    <span class="tag">Golang</span>
-                                    <span class="tag">Laravel</span>
-                                    <span class="tag">Microservices</span>
-                                    <span class="tag">DDD</span>
-                                </div>
-                            </div>
-                        </div>
-        
-                        <div class="project-card">
-                            <div class="project-image">Warehouse Management System</div>
-                            <div class="project-content">
-                                <h3 class="project-title">Pakde Warehouse Management System</h3>
-                                <p class="project-description">Developed and maintained the backend for a comprehensive warehouse management system, including inventory tracking, order processing, and shipping integration.</p>
-                                <div class="tech-tags">
-                                    <span class="tag">Golang</span>
-                                    <span class="tag">AWS</span>
-                                    <span class="tag">CI/CD</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="view-all-container">
-                        <a href="/projects" class="view-all-button">View All Projects</a>
-                    </div>
-                </section>
-        
-                <section id="contact">
-                    <div class="section-heading">Contact</div>
-                    <div class="contact-container">
-                        <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
-                        <div class="contact-info">
-                            <a href="mailto:thomson.p.napitupulu@gmail.com" class="contact-link">thomson.p.napitupulu@gmail.com</a>
-                            <a href="https://github.com/thomsonn" target="_blank" class="contact-link">github.com/thomsonn</a>
-                            <a href="https://linkedin.com/in/thomson-napitupulu" target="_blank" class="contact-link">linkedin.com/in/thomson-napitupulu</a>
-                        </div>
-                    </div>
-                </section>
-            </div>
-            
-            <div class="sidebar">
-                <div class="sidebar-section">
-                    <div class="sidebar-title">Education</div>
-                    <div class="education-item">
-                        <div class="education-degree">Master of Information Technology</div>
-                        <div class="education-school">Swiss German University</div>
-                        <div class="education-date">2023 – Feb 2025</div>
-                    </div>
-                    
-                    <div class="education-item">
-                        <div class="education-degree">Bachelor of Informatics Engineering</div>
-                        <div class="education-school">Universitas Mercubuana</div>
-                        <div class="education-date">2015 - 2017</div>
-                    </div>
-                    
-                    <div class="education-item">
-                        <div class="education-degree">Diploma in Informatics Engineering</div>
-                        <div class="education-school">Institut Teknologi Del</div>
-                        <div class="education-date">2011 - 2014</div>
+        <section id="about">
+            <div class="intro">
+                <img src="/api/placeholder/180/180" alt="Thomson Napitupulu" class="profile-image">
+                <div class="intro-content">
+                    <div class="role">Software Engineer</div>
+                    <h1>Hi, I'm Thomson Napitupulu</h1>
+                    <p>A seasoned software engineer with 10+ years of experience specializing in scalable backend systems and cloud-native applications using Golang, PostgreSQL, and microservices architecture.</p>
+                    <div class="currently">
+                        Currently working as a System Developer at Brankas
                     </div>
                 </div>
-                
-                <div class="sidebar-section">
-                    <div class="sidebar-title">Certifications</div>
-                    <ul class="cert-list">
-                        <li class="cert-item">Certified Artificial Intelligence Engineer (CAIE)</li>
-                        <li class="cert-item">Multi AI Agent Systems with crewAI</li>
-                        <li class="cert-item">Neo4j Fundamentals</li>
-                        <li class="cert-item">Golang Jumpstart</li>
-                        <li class="cert-item">Crash Course Python by Google</li>
-                    </ul>
+            </div>
+        </section>
+
+        <section id="blog">
+            <div class="section-heading">Latest Articles</div>
+            <div class="blog-list">
+                <a href="#" class="blog-card">
+                    <div class="blog-date">February 15, 2024</div>
+                    <h3 class="blog-title">Microservice Architecture with Domain-Driven Design in Golang</h3>
+                    <p class="blog-excerpt">An in-depth exploration of how to implement Domain-Driven Design principles in Golang microservices, based on my experience building enterprise solutions.</p>
+                </a>
+
+                <a href="#" class="blog-card">
+                    <div class="blog-date">November 22, 2023</div>
+                    <h3 class="blog-title">Optimizing API Performance: From 3 Minutes to Under 1 Minute</h3>
+                    <p class="blog-excerpt">A technical deep-dive into the strategies and techniques used to optimize transaction processing time in banking integration systems.</p>
+                </a>
+
+                <a href="#" class="blog-card">
+                    <div class="blog-date">August 10, 2023</div>
+                    <h3 class="blog-title">From Monolith to Microservices: A Real-world Migration Story</h3>
+                    <p class="blog-excerpt">Lessons learned from migrating a monolithic architecture to a cloud-native microservices approach, including challenges faced and solutions implemented.</p>
+                </a>
+            </div>
+            <div class="view-all-container">
+                <a href="/blog" class="view-all-button">View All Articles</a>
+            </div>
+        </section>
+
+        <section id="projects">
+            <div class="section-heading">Selected Projects</div>
+            <div class="project-grid">
+                <div class="project-card">
+                    <div class="project-image">Banking API Integration</div>
+                    <div class="project-content">
+                        <h3 class="project-title">Banking API Integration Platform</h3>
+                        <p class="project-description">Developed a robust integration system connecting multiple banking APIs across the Philippines and Indonesia, reducing transaction processing time from 3 minutes to under 1 minute.</p>
+                        <div class="tech-tags">
+                            <span class="tag">Golang</span>
+                            <span class="tag">PostgreSQL</span>
+                            <span class="tag">Kubernetes</span>
+                            <span class="tag">GCP</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">Electronic Meterai Distribution</div>
+                    <div class="project-content">
+                        <h3 class="project-title">Electronic Meterai Distribution</h3>
+                        <p class="project-description">Built a backbone system for Peruri's digital product and electronic meterai distribution using microservice architecture and Domain-Driven Design, optimizing performance with asynchronous processing.</p>
+                        <div class="tech-tags">
+                            <span class="tag">Golang</span>
+                            <span class="tag">Laravel</span>
+                            <span class="tag">Microservices</span>
+                            <span class="tag">DDD</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">Warehouse Management System</div>
+                    <div class="project-content">
+                        <h3 class="project-title">Pakde Warehouse Management System</h3>
+                        <p class="project-description">Developed and maintained the backend for a comprehensive warehouse management system, including inventory tracking, order processing, and shipping integration.</p>
+                        <div class="tech-tags">
+                            <span class="tag">Golang</span>
+                            <span class="tag">AWS</span>
+                            <span class="tag">CI/CD</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+            <div class="view-all-container">
+                <a href="/projects" class="view-all-button">View All Projects</a>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="section-heading">Contact</div>
+            <div class="contact-container">
+                <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
+                <div class="contact-info">
+                    <a href="mailto:thomson.p.napitupulu@gmail.com" class="contact-link">thomson.p.napitupulu@gmail.com</a>
+                    <a href="https://github.com/thomsonn" target="_blank" class="contact-link">github.com/thomsonn</a>
+                    <a href="https://linkedin.com/in/thomson-napitupulu" target="_blank" class="contact-link">linkedin.com/in/thomson-napitupulu</a>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>
