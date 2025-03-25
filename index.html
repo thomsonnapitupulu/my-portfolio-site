@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name | Software Engineer</title>
+    <style>
+        :root {
+            --background: #ffffff;
+            --text: #232323;
+            --accent: #0070f3;
+            --light-gray: #f5f5f5;
+            --border: #eaeaea;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--background);
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: opacity 0.2s ease;
+        }
+
+        a:hover {
+            opacity: 0.8;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 4rem;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.25rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        nav a.active {
+            color: var(--accent);
+        }
+
+        section {
+            margin-bottom: 5rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .highlight {
+            color: var(--accent);
+        }
+
+        .hero {
+            margin-bottom: 5rem;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 600px;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background-color: var(--light-gray);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 180px;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-tags {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background-color: rgba(0, 112, 243, 0.1);
+            color: var(--accent);
+            padding: 0.25rem 0.75rem;
+            border-radius: 100px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .blog-list {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .blog-card {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .blog-card:last-child {
+            border-bottom: none;
+        }
+
+        .blog-meta {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .search-container {
+            margin-bottom: 2rem;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            font-size: 1rem;
+            transition: border-color 0.2s ease;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        footer {
+            margin-top: 5rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: #666;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .social-link {
+            color: var(--text);
+            font-size: 1.25rem;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Your Name</div>
+        <nav>
+            <ul>
+                <li><a href="#about" class="active">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Hi, I'm <span class="highlight">Your Name</span></h1>
+            <p>I'm a software engineer passionate about building exceptional digital experiences. I specialize in creating clean, efficient code and sharing my knowledge through technical writing.</p>
+        </section>
+
+        <section id="about">
+            <h2>About Me</h2>
+            <p>I'm a software engineer with experience in full-stack development. My journey in tech began with [your starting point], and I've since worked on diverse projects ranging from [type of project] to [another type].</p>
+            <p>When I'm not coding, I enjoy writing technical articles about the latest technologies and working on side projects that solve interesting problems.</p>
+            <p>My technical toolkit includes:</p>
+            <div class="project-tags">
+                <span class="tag">JavaScript</span>
+                <span class="tag">React</span>
+                <span class="tag">Node.js</span>
+                <span class="tag">Python</span>
+                <span class="tag">TypeScript</span>
+                <span class="tag">AWS</span>
+                <!-- Add or modify these tags based on your skills -->
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div class="project-image">Project Image</div>
+                    <div class="project-content">
+                        <h3>Project Name 1</h3>
+                        <div class="project-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">Node.js</span>
+                        </div>
+                        <p>A brief description of the project, what problems it solves, and what technologies were used.</p>
+                        <a href="#" target="_blank">View Project →</a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="project-image">Project Image</div>
+                    <div class="project-content">
+                        <h3>Project Name 2</h3>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Machine Learning</span>
+                        </div>
+                        <p>A brief description of the project, what problems it solves, and what technologies were used.</p>
+                        <a href="#" target="_blank">View Project →</a>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <div class="project-image">Project Image</div>
+                    <div class="project-content">
+                        <h3>Project Name 3</h3>
+                        <div class="project-tags">
+                            <span class="tag">TypeScript</span>
+                            <span class="tag">AWS</span>
+                        </div>
+                        <p>A brief description of the project, what problems it solves, and what technologies were used.</p>
+                        <a href="#" target="_blank">View Project →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="blog">
+            <h2>Blog</h2>
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Search articles..." id="search-blog">
+            </div>
+            <div class="blog-list" id="blog-list">
+                <!-- Blog Post 1 -->
+                <div class="blog-card">
+                    <h3><a href="#" target="_blank">How to Build a Scalable API with Node.js and Express</a></h3>
+                    <div class="blog-meta">
+                        <span>March 15, 2023</span>
+                        <span>Medium</span>
+                    </div>
+                    <p>In this article, I explore best practices for building scalable and maintainable APIs using Node.js and Express.</p>
+                </div>
+
+                <!-- Blog Post 2 -->
+                <div class="blog-card">
+                    <h3><a href="#" target="_blank">Understanding React Hooks: A Comprehensive Guide</a></h3>
+                    <div class="blog-meta">
+                        <span>February 22, 2023</span>
+                        <span>LinkedIn</span>
+                    </div>
+                    <p>A deep dive into React Hooks, exploring how they work under the hood and how to use them effectively in your projects.</p>
+                </div>
+
+                <!-- Blog Post 3 -->
+                <div class="blog-card">
+                    <h3><a href="#" target="_blank">Optimizing Database Performance for Web Applications</a></h3>
+                    <div class="blog-meta">
+                        <span>January 10, 2023</span>
+                        <span>Medium</span>
+                    </div>
+                    <p>Learn how to identify and resolve common database performance issues in web applications.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Get In Touch</h2>
+            <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision. Feel free to reach out to me at <a href="mailto:your.email@example.com">your.email@example.com</a>.</p>
+            <div class="social-links">
+                <a href="https://github.com/yourusername" target="_blank" class="social-link">GitHub</a>
+                <a href="https://linkedin.com/in/yourusername" target="_blank" class="social-link">LinkedIn</a>
+                <a href="https://medium.com/@yourusername" target="_blank" class="social-link">Medium</a>
+                <a href="https://twitter.com/yourusername" target="_blank" class="social-link">Twitter</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2023 Your Name. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Simple Search Functionality for Blog
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('search-blog');
+            const blogList = document.getElementById('blog-list');
+            const blogCards = blogList.querySelectorAll('.blog-card');
+
+            searchInput.addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase();
+                
+                blogCards.forEach(card => {
+                    const title = card.querySelector('h3').textContent.toLowerCase();
+                    const content = card.querySelector('p').textContent.toLowerCase();
+                    
+                    if (title.includes(searchTerm) || content.includes(searchTerm)) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Add functionality to fetch blogs from Medium and LinkedIn
+        async function fetchMediumPosts() {
+            // This would be replaced with actual API calls
+            // Note: Medium's API requires authentication and LinkedIn doesn't have a public content API
+            // You'll need to use RSS feeds or other methods
+
+            console.log('Fetching Medium posts...');
+            // Implementation would go here
+        }
+
+        // Call on page load
+        // fetchMediumPosts();
+    </script>
+</body>
+</html>
